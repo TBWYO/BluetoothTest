@@ -5,7 +5,7 @@ from BluetoothModule import BluetoothHandler
 async def main():
     # Create a BluetoothHandler instance
     handler = BluetoothHandler()
-
+    
     # Connect to the BLE device
     device_address = "00:11:22:33:44:55"
     device = await handler.connect_device(device_address)

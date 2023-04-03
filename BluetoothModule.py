@@ -8,15 +8,6 @@ class BluetoothHandler:
         # Create a dictionary to store discovered devices
         self.devices = {}
 
-    async def scan_devices(self, timeout=5.0):
-        # Clear the devices dictionary
-        self.devices.clear()
-        # Discover BLE devices within the specified timeout
-        devices = await bleak.discover(timeout=timeout)
-        # Add discovered devices to the devices dictionary
-        for d in devices:
-            self.devices[d.address] = d.name
-
     async def connect_device(self, address):
         try:
             # Connect to the specified BLE device
